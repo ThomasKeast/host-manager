@@ -29,7 +29,7 @@ if ($dubyn -eq '1') {
     $toadd = "$IP $domain $dubb"
     Write-Output "I have added the www. record for you..."
 } Else {
-    $toadd = "$IP $domain `n"
+    $toadd = "$IP $domain"
     Write-Output "I have not added the www. record..."
 }
 
