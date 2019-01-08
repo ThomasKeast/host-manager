@@ -21,3 +21,4 @@ During pushes for host-manager, I will look to add the following features into t
 
 - Add arguments to backup the hosts file to a specific path `host-manager.ps1 -backup C:\directory\example\`
 - Add selection window to pick between Chrome, Firefox, Internet Explorer, Edge and other browsers.
+- Add comments to code
