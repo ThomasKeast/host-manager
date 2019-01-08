@@ -29,23 +29,23 @@ if ($dubyn -eq '1') {
     $toadd = "$IP $domain $dubb"
     Write-Output "I have added the www. record for you..."
 } Else {
-    $toadd = "$IP $domain"
+    $toadd = "$IP $domain `n"
     Write-Output "I have not added the www. record..."
 }
 
 $comment = "#$toadd"
-Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Append -Encoding ascii -InputObject $toadd
+#Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Append -Encoding ascii -InputObject $toadd
+Out-File -FilePath $path -Append -Encoding ascii -InputObject $toadd -NoClobber
 Write-Output "$domain was added to the hosts file..."
 
-$rlv = Read-Host 'Would you like to run the live window? - '
+$rlv = Read-Host 'Would you like to run the live window? [y/n] - '
 if ($rlv -eq 'y' -Or $rlv -eq 'Y') {
     Write-Output "Running live window..."
     Start-Sleep -s 2
     [System.Diagnostics.Process]::Start("chrome.exe", "--incognito $domain")
     Write-Output "Press Enter when you are finished testing..."
     pause
-    Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Encoding ascii -InputObject $backup
-    Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Append -NoNewline -Encoding ascii -InputObject $comment 
+    Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Encoding ascii -InputObject "$backup$comment"
     Write-Output "Last was commented out..."
     Start-Sleep 2
     Write-Output "Script has completed..."
