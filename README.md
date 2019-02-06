@@ -1,19 +1,29 @@
 # Windows 10 host-manager
-PowerShell hosts file manager for Windows Operating systems that have PowerShell operational.
+Light, simple Windows 10 PowerShell hosts file manager.
+
+You will typically need write permissions to this file if you are a standard user.
+
+Standard path: `C:\Windows\System32\drivers\etc`
 
 # Usage
+
+Devoping a website? Need to connect to an IP address?
+
+The Windows 10 host file manage allows you to add an IP address along with a URL to add to the hosts file.
+
+This small, light tool will ask you if you want to run a live window, where a private incogneto Google Chrome browser will start with the URL you are tying to visit.
+
+Once you are done testing, debugging, devloping, simply press the Enter key on the PowerShell script to exit. 
+
+The script will go off and comment out the adjustment it made all for you.
+
+# Installation
 
 Clone the GitHub project and run it with PowerShell.
 
 It will ask you for:
 - The IP address
 - Domain name
-
-After supplying the information, it will go and add that new host file line into your Windows hosts file and offer to run a testing window.
-
-The testing window will boot an incognito Google Chrome window along with the URL you wish to visit.
-
-After you're done, press 'Enter' on the PowerShell session and it will remove and then re-add the latest host file entry commented out for later use.
 
 # Dev Notes / Plans
 
